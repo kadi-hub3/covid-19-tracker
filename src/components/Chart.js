@@ -12,12 +12,10 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
             setDailyData(await fetchDailyData())
         }
         fetchAPI()
-        console.log(fetchAPI());
-
     }, [])
 
     const line =
-        (dailyData !== undefined && dailyData.length) ?
+        ((dailyData !== undefined && dailyData.length) ?
             <Line
                 data={{
                     labels: dailyData.map(({ date }) => date),
@@ -33,8 +31,9 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                         fill: 'true'
                     }]
                 }} /> : null
+        )
 
-    const bar = confirmed ?
+    const bar = (confirmed ?
         (<Bar
             data={{
                 labels: ['Infected', 'Recovered', 'Deaths'],
@@ -44,8 +43,13 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                     data: [confirmed.value, recovered.value, deaths.value]
                 }]
             }}
+            options={{
+                legend: { display: false },
+                title: { display: true, text: `Current State in ${country}` }
+            }}
 
         />) : null
+    )
 
     return (
         <div className='container'>

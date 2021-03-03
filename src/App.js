@@ -26,8 +26,8 @@ class App extends React.Component {
   }
 
   render() {
-    const data = this.state
-    const country = this.state
+    const { country, data } = this.state
+    // const country = this.state
 
     return (
       <div>
