@@ -8,5 +8,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+}
+
+
+.card {
+  margin: 1% 2% !important;
+}
+
+.infected-card{
+  border-bottom: 10px solid#b2b2ff;
+}
+
+.recovered-card {
+  border-bottom: 10px solid #cbffc0;
+}
+
+.deaths-card {
+  border-bottom: 10px solid #fdbec8;
 }
