@@ -1,6 +1,11 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  background-color: whitesmoke;
+  background-color: rgba(37, 37, 37, 0.1);
 
 }
 
@@ -8,22 +13,41 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  margin: 2rem 4rem;
 }
 
+.app{
+  display: grid;
+  grid-template-rows: repeat(2,1fr);
+}
 
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem;
+  line-height: 1.5;
+  font-size: 2rem;
+  color: rgba(37, 37, 37,.8);
+
+}
+.form{
+  margin: 3rem 4rem !important;
+}
 .card {
   margin: 1% 2% !important;
 }
 
 .infected-card{
-  border-bottom: 10px solid#b2b2ff;
+  border-bottom: 10px solid #00a9fe;
 }
 
 .recovered-card {
-  border-bottom: 10px solid #cbffc0;
+  border-bottom: 10px solid #d9eb4b;
 }
 
 .deaths-card {
-  border-bottom: 10px solid #fdbec8;
+  border-bottom: 10px solid #fd6bb6;
 }
+

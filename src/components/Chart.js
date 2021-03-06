@@ -3,7 +3,7 @@ import { Line, Bar } from 'react-chartjs-2'
 import '../index.css'
 import { fetchDailyData } from '../api'
 
-const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
+const Chart = ({ data: { confirmed, recovered, deaths, date }, country }) => {
     const [dailyData, setDailyData] = useState([])
 
 
@@ -22,12 +22,12 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                     datasets: [{
                         data: dailyData.map(({ confirmed }) => confirmed),
                         label: 'Infected',
-                        borderColor: 'rgba(255, 99, 132, 0.8)',
+                        borderColor: '#00a9fe',
                         fill: 'true'
                     }, {
                         data: dailyData.map(({ deaths }) => deaths),
                         label: 'Deaths',
-                        borderColor: 'rgba(153, 102, 255, 0.8)',
+                        borderColor: '#fd6bb6',
                         fill: 'true'
                     }]
                 }} /> : null
@@ -39,7 +39,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                 labels: ['Infected', 'Recovered', 'Deaths'],
                 datasets: [{
                     label: 'People',
-                    backgroundColor: ['#b2b2ff', '#cbffc0', '#fdbec8'],
+                    backgroundColor: ['#00a9fe', '#d9eb4b', '#fd6bb6'],
                     data: [confirmed.value, recovered.value, deaths.value]
                 }]
             }}

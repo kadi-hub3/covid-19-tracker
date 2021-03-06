@@ -2,6 +2,7 @@ import React from 'react'
 import Cards from './components/Cards'
 import Country from './components/Country'
 import Chart from './components/Chart'
+import Title from './components/Title'
 import fetchData from './api'
 
 class App extends React.Component {
@@ -14,7 +15,7 @@ class App extends React.Component {
   async componentDidMount() {
     const data = await fetchData()
 
-    this.setState(data)
+    this.setState({ data })
   }
 
 
@@ -26,14 +27,14 @@ class App extends React.Component {
   }
 
   render() {
-    const { country, data } = this.state
-    // const country = this.state
+    const { data, country } = this.state
 
     return (
-      <div>
+      <div className='app'>
+        <Title title='Covid-19 Tracker' subtitle='All Around The World' />
         <Cards data={data} />
-        <Chart data={data} country={country} />
         <Country handleCountry={this.handleCountry} />
+        <Chart data={data} country={country} />
       </div>
     )
   }
