@@ -1,9 +1,7 @@
 import React from 'react'
-import Cards from './components/Cards'
-import Country from './components/Country'
-import Chart from './components/Chart'
-import Title from './components/Title'
-import fetchData from './api'
+import { Cards, Chart, Country, DarkMode, Title } from './components'
+import styles from './App.module.css'
+import fetchData from './API'
 
 class App extends React.Component {
   state = {
@@ -30,7 +28,8 @@ class App extends React.Component {
     const { data, country } = this.state
 
     return (
-      <div className='app'>
+      <div className={styles.container}>
+        <DarkMode />
         <Title title='Covid-19 Tracker' subtitle='All Around The World' />
         <Cards data={data} />
         <Country handleCountry={this.handleCountry} />

@@ -1,0 +1,28 @@
+
+  .title {
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    color: #4db1bc;
+    text-align: center;
+    font-weight: bold;
+    animation: glow 2s ease-in-out infinite alternate;
+    z-index: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+ }
+ 
+ span{
+    font-size: .7em;
+    text-transform: capitalize;
+}
+ 
+ @keyframes glow {
+    from {
+      text-shadow: 0 0 20px #2d9da9;
+    }
+    to {
+      text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+    }
+  }
