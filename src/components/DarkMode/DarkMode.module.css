@@ -3,7 +3,7 @@
 }
 
 .check{
-    position: fixed;
+    position: absolute;
     margin: .5rem;
     top: 1%;
     right: 1%;
